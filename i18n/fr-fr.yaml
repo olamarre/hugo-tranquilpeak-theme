@@ -68,6 +68,16 @@
 - id: "global.tags_found.other"
   translation: "{n} tags trouvés"
 
+## GLOBAL.404 ##
+- id: "global.not_found.title"
+  translation: "Page non trouvée (404)"
+
+- id: "global.not_found.message"
+  translation: "Désolé, la page que vous cherchez est introuvable..."
+
+- id: "global.not_found.link"
+  translation: "Revenir à l'accueil"
+
 ## PAGINATION ##
 - id: "pagination.page"
   translation: "page {{ .Paginator.PageNumber }}"
