@@ -18,7 +18,7 @@
         top:           -1000px;
         display:       block;
         background:    white;
-        max-width:     400px;
+        max-width:     500px; //400px;
         margin:        15px auto;
         border-radius: 3px;
         padding:       30px 0;
@@ -46,6 +46,11 @@
             padding: 0 30px;
             margin:  0 0 30px 0;
         }
+        #about-card-extended {
+            padding: 0 30px;
+            margin:  0 0 30px 0;
+            text-align: left;
+        }
         #about-card-job,
         #about-card-location {
             display:        inline-block;
@@ -53,7 +58,8 @@
         }
         #about-card-job,
         #about-card-location,
-        #about-card-bio {
+        #about-card-bio,
+        #about-card-extended {
             font-size:   $font-size-base;
             line-height: $line-height-base;
             font-weight: 400;
@@ -81,6 +87,9 @@
             }
             #about-card-job {
                 margin-bottom: 15px;
+            }
+            #about-card-extended {
+                display: none; // Hide extended infos on small screen
             }
         }
     }
