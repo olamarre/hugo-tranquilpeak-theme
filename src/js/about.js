@@ -50,6 +50,14 @@
       setTimeout(function() {
         self.dropAboutCard();
       }, 300);
+
+      // If you click on anything except the modal itself, close the modal
+      $(document).click(function(e) {
+        if(!$(e.target).closest('#about-card,.sidebar-button-link,.header-right-picture').length) {
+          e.preventDefault();
+          self.playBack();
+        }
+      });
     },
 
     /**
@@ -68,6 +76,8 @@
       setTimeout(function() {
         self.$about.fadeOut();
       }, 500);
+
+      $(document).off('click');
     },
 
     /**
