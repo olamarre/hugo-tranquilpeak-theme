@@ -53,7 +53,7 @@
 
       // If you click on anything except the modal itself, close the modal
       $(document).click(function(e) {
-        if(!$(e.target).closest('#about-card,.sidebar-button-link,.header-right-picture').length) {
+        if(!$(e.target).closest('#about-card,.sidebar-button-link,.header-right-picture,.sidebar-image-link').length) {
           e.preventDefault();
           self.playBack();
         }
