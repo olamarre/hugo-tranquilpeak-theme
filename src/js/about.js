@@ -58,6 +58,14 @@
           self.playBack();
         }
       });
+
+      // If you push escape key, close the modal
+      document.addEventListener("keydown", function(event) {
+        var key = event.key;
+        if (key === "Escape") {
+          self.playBack();
+        }
+      });
     },
 
     /**
