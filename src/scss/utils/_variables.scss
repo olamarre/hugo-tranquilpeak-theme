@@ -2,9 +2,9 @@
 // --------------------------------------------
 
 // Font families
-$open-sans:            'Open Sans';
-$open-sans-sans-serif: 'Open Sans', sans-serif;
-$merriweather-serif:   'Merriweather', serif;
+$open-sans:            'Roboto'; //'Open Sans';
+$open-sans-sans-serif: 'Roboto', sans-serif; //'Open Sans', sans-serif;
+$merriweather-serif:   'Roboto', sans-serif; //'Merriweather', serif;
 $menlo:                 Menlo, Consolas, monospace;
 
 $font-family-base: $open-sans-sans-serif;
@@ -26,25 +26,25 @@ $font-families: (
 );
 
 // equal to 15px
-$font-size-base:      1.6rem;
+$font-size-base:      2rem;
 $font-color-base:     #5d686f;
 $line-height-base:    1.9em;
 $letter-spacing-base: 0.01em;
 
 $font-weight-base-light:   400;
-$font-weight-base-dark:    350;
+$font-weight-base-dark:    400; //350
 
 // Reduction of font size base on small screen and down
 $font-size-base-sm-screen-reduction-factor: 0.1rem;
 
 // Font size : (X.Xrem = XXpx, 1.0rem = 10px)
 $font-size: (
-    'xxlarge': 2rem,
-    'xlarge': 1.8rem,
-    'large':  1.7rem,
+    'xxlarge': 2.4rem,
+    'xlarge': 2.2rem,
+    'large':  2.1rem,
     'base':   $font-size-base,
-    'medium': 1.5rem,
-    'small':  1.3rem,
+    'medium': 1.7rem,
+    'small':  1.5rem,
     'xsmall': 1rem
 );
 
@@ -119,12 +119,12 @@ $xlarge-and-up:   "only screen and (min-width : #{map-get($screen, xlg-min)})" !
 
 // Headings font-size : (X.Xrem = XXpx, 1.0rem = 10px)
 $headings-font-size: (
-    'h1': 2.8rem,
-    'h2': 2.4rem,
-    'h3': 2.0rem,
-    'h4': 1.8rem,
-    'h5': 1.7rem,
-    'h6': 1.6rem
+    'h1': 3.0rem,
+    'h2': 2.8rem,
+    'h3': 2.4rem,
+    'h4': 2.0rem,
+    'h5': 1.8rem,
+    'h6': 1.7rem
 );
 // Reduction of headings font size on small screen and down
 $headings-font-size-sm-screen-reduction-factor: 0.2rem;
