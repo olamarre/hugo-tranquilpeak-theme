@@ -1,0 +1,15 @@
+{{ if not (eq .Params.showMeta false) }}
+  <div class="postShorten-meta post-meta">
+    {{ $padding := "20px"}}
+    <i class="fas fa-user-astronaut" style="display: inline-block; width: {{ $padding }};"></i>  {{ .Params.authors }}
+    <br/>
+    {{ if isset .Params "conference" }}
+    <i class="fa fa-rocket" style="display: inline-block; width: {{ $padding }};"></i>  {{ .Params.conference }}
+    {{ end }}
+    <br/>
+    {{ if isset .Params "journal" }}
+    <i class="fa fa-book" style="display: inline-block; width: {{ $padding }};"></i>  {{ .Params.journal }}
+    {{ end }}
+    
+  </div>
+{{ end }}
