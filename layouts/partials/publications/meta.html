@@ -1,16 +1,48 @@
 {{ if not (eq .Params.showMeta false) }}
   <div class="postShorten-meta post-meta">
+
+    <br/>
     {{ $padding := "20px"}}
-    <i class="fas fa-user-astronaut" style="display: inline-block; width: {{ $padding }};"></i>  {{ .Params.authors }}
+
+    <!-- List authors -->
+    <i class="fas fa-user-astronaut" style="display: inline-block; width: {{ $padding }};"></i>
+    {{ $numAuthors := (len .Params.authors) }}
+    {{ range $index, $author := .Params.authors }}
+
+      {{ $comma := " "}}
+      {{ if ne (add $index 1) $numAuthors }}
+        {{ $comma = ","}}
+      {{ end }}
+
+      {{ if eq $author "Olivier Lamarre"}}
+        <span style="font-weight:900">{{ $author }}</span>{{ $comma }}
+      {{ end }}
+      {{ if ne $author "Olivier Lamarre" }}
+        {{ $author }}{{ $comma }}
+      {{ end }}
+
+    {{ end }}
     <br/>
     {{ if isset .Params "conference" }}
       <i class="fa fa-rocket" style="display: inline-block; width: {{ $padding }};"></i>  {{ .Params.conference }}
+      <br/>
     {{ end }}
-    <br/>
     {{ if isset .Params "journal" }}
       <i class="fa fa-book" style="display: inline-block; width: {{ $padding }};"></i>  {{ .Params.journal }}
+      <br/>
     {{ end }}
-    <br/><br/>
+
+    {{ if isset .Params "loc" }}
+      <i class="fas fa-map-pin" style="display: inline-block; width: {{ $padding }};"></i>  {{ .Params.loc }}
+      <br/>
+    {{ end }}
+
+    {{ if isset .Params "award" }}
+      <span style="color:#00F2FF; font-weight:900">
+        <i class="fas fa-award" style="display: inline-block; width: {{ $padding }};"></i>  {{ .Params.award }}
+      </span>
+      <br/><br/>
+    {{ end }}
 
     <!-- Other publication links -->
     {{ if isset .Params "preprint" }}
@@ -41,7 +73,7 @@
       <a href="{{ .Params.website }}">
         <i class="fas fa-globe-americas" style="display: inline-block; width: {{ $padding }};"></i>  Project Website
       </a>
-    {{ end }}
 
+    {{ end }}
   </div>
 {{ end }}
