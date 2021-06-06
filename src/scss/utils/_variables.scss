@@ -119,7 +119,7 @@ $xlarge-and-up:   "only screen and (min-width : #{map-get($screen, xlg-min)})" !
 
 // Headings font-size : (X.Xrem = XXpx, 1.0rem = 10px)
 $headings-font-size: (
-    'h1': 4.0rem,  //OLI 3.0
+    'h1': 3.0rem,
     'h2': 2.8rem,
     'h3': 2.4rem,
     'h4': 2.0rem,
@@ -252,7 +252,7 @@ $image-gallery-photos-margin: 2px;
 
 // Main content
 $main-content: (
-    'max-width':          850px,
+    'max-width':          1200px, //OLI 850px
     'padding-right-left': 20px,
 );
 $main-width: map-get($main-content, max-width) + map-get($main-content, padding-right-left) * 2;
@@ -280,7 +280,7 @@ $pagination-height: 60px;
 
 // Post thumbnail image
 // Width and height of post's thumbnail image
-$post-thumbnail-image-width: 200px; //OLI 140px
+$post-thumbnail-image-width: 250px; //OLI 140px
 
 // Tooltip
 $tooltip: (
