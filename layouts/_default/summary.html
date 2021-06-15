@@ -26,11 +26,18 @@
 {{ if eq .Params.type "publication"}}  <!-- Publication summary -->
   <article class="postShorten postShorten--thumbnailimg-{{ .Scratch.Get "thumbnailImagePosition" }}" itemscope itemType="http://schema.org/BlogPosting">
     
-    <!-- Retrieve publication hyperlink, if it is set -->
-    {{ $hyperlink := .Permalink }}
+    <!-- Retrieve publication hyperlink or preprint, if they are set -->
+    {{ $hyperlink := "#" }}  <!-- {{ $hyperlink := .Permalink }} -->
+    {{ if isset .Params "preprint" }}
+      {{ $hyperlink = .Params.preprint }}
+    {{ end }}
     {{ if isset .Params "hyperlink" }}
       {{ $hyperlink = .Params.hyperlink }}
     {{ end }}
+    {{ if isset .Params "hyperlink" }}
+      {{ $hyperlink = .Params.hyperlink }}
+    {{ end }}
+
     <div class="postShorten-wrap">
       {{ if and (.Scratch.Get "thumbnailImage") (eq (.Scratch.Get "thumbnailImagePosition") "top")}}
         <a href="{{ $hyperlink }}">

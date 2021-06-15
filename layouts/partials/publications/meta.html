@@ -41,39 +41,44 @@
       <span style="color:#00F2FF; font-weight:900">
         <i class="fas fa-award" style="display: inline-block; width: {{ $padding }};"></i>  {{ .Params.award }}
       </span>
-      <br/><br/>
+      <br/>
     {{ end }}
+
+    <br/>
 
     <!-- Other publication links -->
+    {{ if isset .Params "hyperlink" }}
+      <a href="{{ .Params.hyperlink }}">
+        <i class="fas fa-external-link-alt" style="display: inline-block; width: {{ $padding }};"></i> Link
+      </a>
+      &nbsp; &nbsp; &nbsp;
+    {{ end }}
+
     {{ if isset .Params "preprint" }}
       <a href="{{ .Params.preprint }}">
-        <i class="fas fa-file-alt" style="display: inline-block; width: {{ $padding }};"></i>  Preprint PDF
+        <i class="fas fa-file-alt" style="display: inline-block; width: {{ $padding }};"></i> Preprint PDF
       </a>
+      &nbsp; &nbsp; &nbsp;
     {{ end }}
-    
-    &nbsp; &nbsp; &nbsp;
 
     {{ if isset .Params "code" }}
-    <a href="{{ .Params.code }}">
-      <i class="fab fa-github" style="display: inline-block; width: {{ $padding }};"></i>  Code
-    </a>
+      <a href="{{ .Params.code }}">
+        <i class="fab fa-github" style="display: inline-block; width: {{ $padding }};"></i> Code
+      </a>
+      &nbsp; &nbsp; &nbsp;
     {{ end }}
-
-    &nbsp; &nbsp; &nbsp;
 
     {{ if isset .Params "slides" }}
-    <a href="{{ .Params.slides }}">
-      <i class="fas fa-laptop" style="display: inline-block; width: {{ $padding }};"></i>  Slides
-    </a>
+      <a href="{{ .Params.slides }}">
+        <i class="fas fa-laptop" style="display: inline-block; width: {{ $padding }};"></i> Slides
+      </a>
+      &nbsp; &nbsp; &nbsp;
     {{ end }}
-
-    &nbsp; &nbsp; &nbsp;
 
     {{ if isset .Params "website" }}
       <a href="{{ .Params.website }}">
-        <i class="fas fa-globe-americas" style="display: inline-block; width: {{ $padding }};"></i>  Project Website
+        <i class="fas fa-globe-americas" style="display: inline-block; width: {{ $padding }};"></i> Project Website
       </a>
-
     {{ end }}
   </div>
 {{ end }}
