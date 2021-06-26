@@ -23,6 +23,7 @@
 @mixin post-header-cover-lg {
     width: 100%;
     left:  0;
+    top: #{map-get($header, 'height')}
 }
 
 /// Mixin helper to pushed post header cover from medium sidebar size

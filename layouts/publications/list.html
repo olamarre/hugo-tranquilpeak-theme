@@ -12,6 +12,15 @@
 
         <!-- Page text before list -->
         <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+
+          <!-- Cover caption and page title -->
+          {{ with .Params.covercaption }}
+            <span class="post-header-cover-caption caption">{{ . | markdownify }}</span>
+          {{ end }}
+          {{ if or (not .Params.coverimage) (eq .Params.covermeta "out") }}
+            {{ partial "post/header.html" . }}
+          {{ end }}
+
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               {{ ( .Content) | safeHTML }}

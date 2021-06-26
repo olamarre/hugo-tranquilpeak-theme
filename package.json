@@ -49,6 +49,8 @@
     "node-sass": "4.12.0"
   },
   "dependencies": {
+    "compass-mixins": "^0.12.10",
+    "grunt-contrib-compass": "^1.1.1",
     "grunt-exec": "^3.0.0"
   },
   "engines": {
