@@ -24,5 +24,12 @@
         {{ . }}
       </div>
     {{ end }}
+    {{ with .Site.Author.email }}
+      <div id="about-card-email">
+        <i class="fas fa-at"></i>
+        <br/>
+        {{ . }}
+      </div>
+    {{ end }}
   </div>
 </div>

@@ -17,7 +17,7 @@
         // Position the card out the page to improve the javascript drop effect
         top:           -1000px;
         display:       block;
-        max-width:     400px;
+        max-width:     550px;//400px;
         margin:        15px auto;
         border-radius: 3px;
         padding:       30px 0;
@@ -50,12 +50,14 @@
             margin:  0 0 30px 0;
         }
         #about-card-job,
-        #about-card-location {
+        #about-card-location,
+        #about-card-email {
             display:        inline-block;
             vertical-align: top;
         }
         #about-card-job,
         #about-card-location,
+        #about-card-email,
         #about-card-bio {
             font-size:   $font-size-base;
             line-height: $line-height-base;
@@ -74,7 +76,8 @@
             width: 90%;
 
             #about-card-job,
-            #about-card-location {
+            #about-card-location,
+            #about-card-email {
                 display: block;
                 width:   calc(100% - 60px); // 60px = padding right + padding left of `#about-card`
                 padding: 0 30px;
@@ -84,9 +87,16 @@
                 height:        90px;
                 border-radius: 45px;
             }
-            #about-card-job {
+            #about-card-job,
+            #about-card-location {
                 margin-bottom: 15px;
             }
+            // #about-card-email {
+            //     display: block;
+            //     width: 100%;
+            //     padding: 0 30px;
+            //     margin-bottom: 15px;
+            // }
         }
     }
 }
@@ -105,13 +115,19 @@
             #about-card-location {
                 display: inline-block;
                 // 48px =  padding right of `#about-card-job` + `#about-card-location`
-                width:   calc((100% / 2) - 48px);
+                width:   calc((100% / 2) - 65px);
+                margin-bottom: 15px;
             }
             #about-card-job {
                 padding: 0 15px 0 30px;
             }
             #about-card-location {
                 padding: 0 30px 0 15px;
+            }
+            #about-card-email {
+                display: block;
+                width: 100%;
+                padding: 0 0 0 0;
             }
         }
     }
