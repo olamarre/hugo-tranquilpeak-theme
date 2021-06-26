@@ -1,0 +1,20 @@
+{{ if not (eq .Params.showMeta false) }}
+  <div class="postShorten-meta post-meta">
+
+    {{ $padding := "20px"}}
+
+    <!-- List authors -->
+    <i class="far fa-calendar-alt" style="display: inline-block; width: {{ $padding }};"></i>
+    <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+      {{ partial "internal/date.html" . }}
+    </time>
+
+    {{ if isset .Params "french" }}
+    <br/>
+    <a href="{{ .Params.french }}">
+      <i class="fas fa-external-link-alt" style="display: inline-block; width: {{ $padding }};"></i> Similar event in French also available
+    </a>
+    {{ end }}
+
+  </div>
+{{ end }}

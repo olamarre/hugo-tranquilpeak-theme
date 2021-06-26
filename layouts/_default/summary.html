@@ -113,14 +113,15 @@
             {{ .Title }}
           </a>
         </h3>
-
-        <div class="postShorten-meta post-meta">
+        
+        {{ partial "outreach/meta" . }}
+        <!-- <div class="postShorten-meta post-meta">
           {{ $padding := "20px"}}
           <i class="far fa-calendar-alt" style="display: inline-block; width: {{ $padding }};"></i>
           <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
             {{ partial "internal/date.html" . }}
           </time>
-        </div>
+        </div> -->
         
       </div>
       <div class="postShorten-excerpt" itemprop="articleBody">
