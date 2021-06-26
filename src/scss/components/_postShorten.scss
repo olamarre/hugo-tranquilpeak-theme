@@ -102,16 +102,16 @@
     //         }
     //     }
     // }
-
+    
+    
     .postShorten.postShorten--thumbnailimg-adjust {
-        .postShorten-wrap {
-            display: block;
-            width:   100%;
-        }
+        
         .postShorten-excerpt > p {
             margin-bottom: 0;
         }
-        .postShorten-thumbnailimg {
+
+        // Publication thumbnails
+        .postShorten-thumbnailimg-pub {
 
             display:  block;
             width:    100%;
@@ -122,6 +122,28 @@
                 width:  100%; //auto;
                 height: auto;
             }
+        }
+        .postShorten-wrap-pub {
+            display: block;
+            width:   100%;
+        }
+
+        // Outreach thumbnails
+        .postShorten-thumbnailimg-out {
+
+            display:  block;
+            width:    100%;
+            overflow: hidden;
+            margin:   15px 0 15px 0;
+
+            img {
+                width:  100%; //auto;
+                height: auto;
+            }
+        }
+        .postShorten-wrap-out {
+            display: block;
+            width:   100%;
         }
     }
 }
@@ -191,21 +213,42 @@
         }
     }
     .postShorten.postShorten--thumbnailimg-adjust {
-        .postShorten-thumbnailimg {
+        
+        // Publication thumbnails
+        .postShorten-thumbnailimg-pub {
             float:  left;
             margin: 5px 15px 30px 0;
 
             img {
                 display:    block;
                 width:      $post-thumbnail-image-width;
-                height:     $post-thumbnail-image-width;
+                height:     auto;//$post-thumbnail-image-width;
                 object-fit: cover;
                 overflow:   hidden;
             }
         }
-        .postShorten-wrap {
+        .postShorten-wrap-pub {
             float: right;
             width: calc(100% - #{$post-thumbnail-image-width} - 20px);
         }
     }
+
+        // Outreach thumbnails
+        .postShorten-thumbnailimg-out {
+            float:  left;
+            margin: 5px 15px 30px 0;
+
+            img {
+                display:    block;
+                width:      $video-thumbnail-image-width;
+                height:     auto;//$post-thumbnail-image-width;
+                object-fit: cover;
+                overflow:   hidden;
+            }
+        }
+        .postShorten-wrap-out {
+            float: right;
+            width: calc(100% - #{$video-thumbnail-image-width} - 20px);
+        }
+
 }

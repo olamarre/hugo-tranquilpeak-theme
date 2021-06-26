@@ -38,10 +38,10 @@
       {{ $hyperlink = .Params.hyperlink }}
     {{ end }}
 
-    <div class="postShorten-wrap">
+    <div class="postShorten-wrap-pub">
       {{ if and (.Scratch.Get "thumbnailImage") (eq (.Scratch.Get "thumbnailImagePosition") "top")}}
         <a href="{{ $hyperlink }}">
-          <div class="postShorten-thumbnailimg">
+          <div class="postShorten-thumbnailimg-pub">
             <img alt="" itemprop="image" src="{{ .Scratch.Get "thumbnailImage" }}"/>
           </div>
         </a>
@@ -75,14 +75,86 @@
     </div>
     {{ if and (.Scratch.Get "thumbnailImage") (ne (.Scratch.Get "thumbnailImagePosition") "top")}}
       <a href="{{ $hyperlink }}">
-        <div class="postShorten-thumbnailimg">
+        <div class="postShorten-thumbnailimg-pub">
           <img alt="" itemprop="image" src="{{ .Scratch.Get "thumbnailImage" }}"/>
         </div>
       </a>
     {{ end }}
   </article>
-{{ else }}
+{{ end }}
+
+
+{{ if eq .Params.type "outreach"}}  <!-- Outreach summary -->
   <article class="postShorten postShorten--thumbnailimg-{{ .Scratch.Get "thumbnailImagePosition" }}" itemscope itemType="http://schema.org/BlogPosting">
+    
+    <!-- Retrieve publication hyperlink or preprint, if they are set -->
+    {{ $hyperlink := "#" }}  <!-- {{ $hyperlink := .Permalink }} -->
+    {{ if isset .Params "preprint" }}
+      {{ $hyperlink = .Params.preprint }}
+    {{ end }}
+    {{ if isset .Params "hyperlink" }}
+      {{ $hyperlink = .Params.hyperlink }}
+    {{ end }}
+    {{ if isset .Params "hyperlink" }}
+      {{ $hyperlink = .Params.hyperlink }}
+    {{ end }}
+
+    <div class="postShorten-wrap-out">
+      {{ if and (.Scratch.Get "thumbnailImage") (eq (.Scratch.Get "thumbnailImagePosition") "top")}}
+        <a href="{{ $hyperlink }}">
+          <div class="postShorten-thumbnailimg-out">
+            <img alt="" itemprop="image" src="{{ .Scratch.Get "thumbnailImage" }}"/>
+          </div>
+        </a>
+      {{ end }}
+      <div class="postShorten-header">
+        <h3 class="postShorten-title" itemprop="headline">
+          <a class="link-unstyled" href="{{ $hyperlink }}">
+            {{ .Title }}
+          </a>
+        </h3>
+
+        <div class="postShorten-meta post-meta">
+          {{ $padding := "20px"}}
+          <i class="far fa-calendar-alt" style="display: inline-block; width: {{ $padding }};"></i>
+          <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+            {{ partial "internal/date.html" . }}
+          </time>
+        </div>
+        
+      </div>
+      <div class="postShorten-excerpt" itemprop="articleBody">
+        {{ if .Params.Summary }}
+          
+          {{ .Params.Summary | markdownify }}
+        {{ else }}
+          {{ .Summary }}
+        {{ end }}
+
+        <!-- Read more link -->
+        <!-- <p>
+          <a href="{{ .Permalink }}" class="postShorten-excerpt_link link">{{ i18n "post.read_more" }}</a>
+          {{ with .Params.readingtime }}
+            <span class="postShorten-readingtime">
+              {{ printf " - %s min read" . }}
+            </span>
+          {{ end }}
+        </p> -->
+      </div>
+    </div>
+    {{ if and (.Scratch.Get "thumbnailImage") (ne (.Scratch.Get "thumbnailImagePosition") "top")}}
+      <a href="{{ $hyperlink }}">
+        <div class="postShorten-thumbnailimg-out">
+          <img alt="" itemprop="image" src="{{ .Scratch.Get "thumbnailImage" }}"/>
+        </div>
+      </a>
+    {{ end }}
+  </article>
+{{ end }}
+
+
+
+  <!-- <article class="postShorten postShorten--thumbnailimg-{{ .Scratch.Get "thumbnailImagePosition" }}" itemscope itemType="http://schema.org/BlogPosting">
     <div class="postShorten-wrap">
       {{ if and (.Scratch.Get "thumbnailImage") (eq (.Scratch.Get "thumbnailImagePosition") "top")}}
         <a href="{{ .Permalink }}">
@@ -122,5 +194,4 @@
         </div>
       </a>
     {{ end }}
-  </article>
-{{ end }}
+  </article> -->
