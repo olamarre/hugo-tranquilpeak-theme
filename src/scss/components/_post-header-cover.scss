@@ -118,6 +118,9 @@
             @include post-header-cover-pushed-md;
         }
     }
+    .post-header-cover-caption {
+        margin: #{map-get($header, 'height')} 0 50px 0;
+    }
 }
 
 @media #{$medium-only} {
