@@ -1,34 +1,11 @@
 {{ if not (eq .Params.showMeta false) }}
   <div class="postShorten-meta post-meta">
 
-    <br/>
     {{ $padding := "20px"}}
 
     <!-- List authors -->
-    <i class="fas fa-user-astronaut" style="display: inline-block; width: {{ $padding }};"></i>
-    {{ $numAuthors := (len .Params.authors) }}
-    {{ range $index, $author := .Params.authors }}
-
-      {{ $comma := " "}}
-      {{ if ne (add $index 1) $numAuthors }}
-        {{ $comma = ","}}
-      {{ end }}
-
-      {{ if eq $author "Olivier Lamarre"}}
-        <span style="font-weight:900">{{ $author }}</span>{{ $comma }}
-      {{ end }}
-      {{ if ne $author "Olivier Lamarre" }}
-        {{ $author }}{{ $comma }}
-      {{ end }}
-
-    {{ end }}
-    <br/>
-    {{ if isset .Params "conference" }}
-      <i class="fa fa-rocket" style="display: inline-block; width: {{ $padding }};"></i>  {{ .Params.conference }}
-      <br/>
-    {{ end }}
-    {{ if isset .Params "journal" }}
-      <i class="fa fa-book" style="display: inline-block; width: {{ $padding }};"></i>  {{ .Params.journal }}
+    {{ if isset .Params "position" }}
+      <i class="fa fa-user-astronaut" style="display: inline-block; width: {{ $padding }};"></i>  {{ .Params.position }}
       <br/>
     {{ end }}
 
@@ -44,41 +21,5 @@
       <br/>
     {{ end }}
 
-    <br/>
-
-    <!-- Other publication links -->
-    {{ if isset .Params "hyperlink" }}
-      <a href="{{ .Params.hyperlink }}">
-        <i class="fas fa-external-link-alt" style="display: inline-block; width: {{ $padding }};"></i> Link
-      </a>
-      &nbsp; &nbsp; &nbsp;
-    {{ end }}
-
-    {{ if isset .Params "preprint" }}
-      <a href="{{ .Params.preprint }}">
-        <i class="fas fa-file-alt" style="display: inline-block; width: {{ $padding }};"></i> Preprint PDF
-      </a>
-      &nbsp; &nbsp; &nbsp;
-    {{ end }}
-
-    {{ if isset .Params "code" }}
-      <a href="{{ .Params.code }}">
-        <i class="fab fa-github" style="display: inline-block; width: {{ $padding }};"></i> Code
-      </a>
-      &nbsp; &nbsp; &nbsp;
-    {{ end }}
-
-    {{ if isset .Params "slides" }}
-      <a href="{{ .Params.slides }}">
-        <i class="fas fa-laptop" style="display: inline-block; width: {{ $padding }};"></i> Slides
-      </a>
-      &nbsp; &nbsp; &nbsp;
-    {{ end }}
-
-    {{ if isset .Params "website" }}
-      <a href="{{ .Params.website }}">
-        <i class="fas fa-globe-americas" style="display: inline-block; width: {{ $padding }};"></i> Project Website
-      </a>
-    {{ end }}
   </div>
 {{ end }}

@@ -33,9 +33,8 @@
     {{ end }}
     {{ if isset .Params "hyperlink" }}
       {{ $hyperlink = .Params.hyperlink }}
-    {{ end }}
-    {{ if isset .Params "hyperlink" }}
-      {{ $hyperlink = .Params.hyperlink }}
+    {{ else }}
+    {{ $hyperlink = .Permalink }}
     {{ end }}
 
     <div class="postShorten-wrap-pub">
