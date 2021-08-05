@@ -10,10 +10,12 @@
         {{ range $index, $element := .Params.gallery }}
           {{ $image := (split $element " ") }}
           {{ $imageLength := len $image }}
+          {{ $caption := (split $element "caption:") }}
+          {{ $captionLength := len $caption }}
           <div class="photo-box">
             <a class="photo-box-inner fancybox" data-fancybox-group="gallery-{{ $.File.UniqueID }}"
-               title="{{ if gt $imageLength 2 }}{{ index $image 2 }}{{ else }}{{ index $image 1 }}{{ end }}" href="{{ index $image 0 }}">
-              <img class="photo" src="{{ if gt $imageLength 2 }}{{ index $image 1 }}{{ else }}{{ index $image 0 }}{{ end }}" itemprop="image">
+               title="{{ if gt $captionLength 1 }}{{ index $caption 1 }}{{ end }}" href="{{ index $image 0 }}">
+              <img class="photo" src="{{ index $image 0 }}" itemprop="image">
             </a>
           </div>
         {{ end }}
