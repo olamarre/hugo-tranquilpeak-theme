@@ -2,6 +2,7 @@
   {{ $galleryLength := len .Params.gallery }}
   {{ $imageGalleryClass := "" }}
   {{ if gt $galleryLength 0 }}
+    <br/>
     <div class="image-gallery">
       <div class="image-gallery-metabar">
         <span>Gallery {{ $galleryLength }} images</span>
