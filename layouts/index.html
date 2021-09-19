@@ -33,13 +33,13 @@
 
 
 
-        <section class="postShorten-group main-content-wrap">
+        <!-- <section class="postShorten-group main-content-wrap">
           {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
           {{ range $paginator.Pages }}
             {{ .Render "summary" }}
           {{ end }}
           {{ partial "pagination.html" . }}
-        </section>
+        </section> -->
         {{ partial "footer.html" . }}
       </div>
     </div>
